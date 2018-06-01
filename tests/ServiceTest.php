@@ -2,14 +2,14 @@
 
 use Mockery as m;
 use Belt\Core\Testing\BeltTestCase;
-use Belt\Elastic\Engine;
-use Belt\ElasticService;
+use Belt\Elastic\Engine as ElasticEngine;
+use Belt\Elastic\Service as ElasticService;
 use Elasticsearch\Namespaces\IndicesNamespace;
 use Elasticsearch\Client as Elastic;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Database\Eloquent\Collection;
 
-class ElasticServiceTest extends BeltTestCase
+class ServiceTest extends BeltTestCase
 {
     public function tearDown()
     {
@@ -17,18 +17,18 @@ class ElasticServiceTest extends BeltTestCase
     }
 
     /**
-     * @covers \Belt\ElasticService::__construct
-     * @covers \Belt\ElasticService::elastic
-     * @covers \Belt\ElasticService::engine
-     * @covers \Belt\ElasticService::indices
-     * @covers \Belt\ElasticService::disk
-     * @covers \Belt\ElasticService::writeConfig
-     * @covers \Belt\ElasticService::deleteIndex
-     * @covers \Belt\ElasticService::createIndex
-     * @covers \Belt\ElasticService::getSettings
-     * @covers \Belt\ElasticService::getMappings
-     * @covers \Belt\ElasticService::putMappings
-     * @covers \Belt\ElasticService::import
+     * @covers \Belt\Elastic\Service::__construct
+     * @covers \Belt\Elastic\Service::elastic
+     * @covers \Belt\Elastic\Service::engine
+     * @covers \Belt\Elastic\Service::indices
+     * @covers \Belt\Elastic\Service::disk
+     * @covers \Belt\Elastic\Service::writeConfig
+     * @covers \Belt\Elastic\Service::deleteIndex
+     * @covers \Belt\Elastic\Service::createIndex
+     * @covers \Belt\Elastic\Service::getSettings
+     * @covers \Belt\Elastic\Service::getMappings
+     * @covers \Belt\Elastic\Service::putMappings
+     * @covers \Belt\Elastic\Service::import
      */
     public function test()
     {

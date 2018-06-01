@@ -3,7 +3,7 @@
 use Mockery as m;
 use Belt\Core\Http\Requests\PaginateRequest;
 use Belt\Core\Testing\BeltTestCase;
-use Belt\Elastic\Engine;
+use Belt\Elastic\Engine as ElasticEngine;
 use Belt\Elastic\Modifiers\IdSortModifier;
 
 class ElasticIdSortModifierTest extends BeltTestCase

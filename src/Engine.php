@@ -10,13 +10,13 @@ use Belt\Content\Search;
 use Elasticsearch\Client as Elastic;
 use Illuminate\Database\Eloquent\Collection;
 use Laravel\Scout\Builder;
-use Laravel\Scout\Engines\Engine;
+use Laravel\Scout\Engines\Engine as BaseEngine;
 
 /**
  * Class ElasticEngine
  * @package Belt\Elastic\Search
  */
-class Engine extends Engine implements Search\HasPaginatorInterface
+class Engine extends BaseEngine implements Search\HasPaginatorInterface
 {
 
     use HasConfig, Search\HasPaginator;

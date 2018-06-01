@@ -3,7 +3,7 @@
 namespace Belt\Elastic\Modifiers;
 
 use Belt\Core\Http\Requests\PaginateRequest;
-use Belt\Elastic\Engine;
+use Belt\Elastic\Engine as ElasticEngine;
 
 /**
  * Class PaginationQueryModifier

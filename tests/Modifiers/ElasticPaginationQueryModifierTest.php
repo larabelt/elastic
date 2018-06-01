@@ -2,7 +2,7 @@
 
 use Mockery as m;
 use Belt\Core\Testing\BeltTestCase;
-use Belt\Elastic\Engine;
+use Belt\Elastic\Engine as ElasticEngine;
 use Belt\Elastic\Modifiers\NeedleQueryModifier;
 
 class ElasticPaginationQueryModifierTest extends BeltTestCase

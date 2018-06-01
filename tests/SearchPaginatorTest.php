@@ -7,12 +7,12 @@ use Belt\Content\Http\Requests\PaginatePages;
 use Belt\Content\Http\Requests\PaginatePosts;
 use Belt\Content\Page;
 use Belt\Content\Post;
-use Belt\ElasticSearchPaginator;
+use Belt\Elastic\SearchPaginator;
 use Belt\Content\Search\Mock\MockEngine;
 use Illuminate\Http\Request;
 use Laravel\Scout\EngineManager;
 
-class ElasticSearchPaginatorTest extends BeltTestCase
+class SearchPaginatorTest extends BeltTestCase
 {
     public function tearDown()
     {
@@ -20,7 +20,7 @@ class ElasticSearchPaginatorTest extends BeltTestCase
     }
 
     /**
-     * @covers \Belt\ElasticSearchPaginator::build
+     * @covers \Belt\Elastic\SearchPaginator::build
      */
     public function test()
     {
@@ -37,14 +37,14 @@ class ElasticSearchPaginatorTest extends BeltTestCase
         $request = new Request(['include' => 'pages']);
         $request = PaginateRequest::extend($request);
 
-        $paginator = new ElasticSearchPaginator(null, $request);
+        $paginator = new SearchPaginator(null, $request);
 
         $paginator->build();
     }
 
 }
 
-class ElasticSearchPaginatorStub
+class SearchPaginatorStub
 {
     public function getMorphClass()
     {
