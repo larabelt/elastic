@@ -6,7 +6,7 @@ use Belt\Core\Commands\PublishCommand as Command;
 
 /**
  * Class PublishCommand
- * @package Belt\Content\Commands
+ * @package Belt\Elastic\Commands
  */
 class PublishCommand extends Command
 {
@@ -16,25 +16,23 @@ class PublishCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'belt-content:publish {action=publish} {--force} {--include=} {--exclude=} {--config}';
+    protected $signature = 'belt-elastic:publish {action=publish} {--force} {--include=} {--exclude=} {--config}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'publish assets for belt content';
+    protected $description = 'publish assets for belt elastic';
 
     /**
      * @var array
      */
     protected $dirs = [
-        'vendor/larabelt/content/config' => 'config/belt',
-        //'vendor/larabelt/content/resources/js' => 'resources/belt/content/js',
-        //'vendor/larabelt/content/resources/sass' => 'resources/belt/content/sass',
-        'vendor/larabelt/content/database/factories' => 'database/factories',
-        'vendor/larabelt/content/database/migrations' => 'database/migrations',
-        'vendor/larabelt/content/database/seeds' => 'database/seeds',
+        'vendor/larabelt/elastic/config' => 'config/belt',
+        'vendor/larabelt/elastic/database/factories' => 'database/factories',
+        'vendor/larabelt/elastic/database/migrations' => 'database/migrations',
+        'vendor/larabelt/elastic/database/seeds' => 'database/seeds',
     ];
 
 }

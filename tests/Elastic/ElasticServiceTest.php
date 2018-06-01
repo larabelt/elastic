@@ -2,7 +2,7 @@
 
 use Mockery as m;
 use Belt\Core\Testing\BeltTestCase;
-use Belt\Content\Elastic\ElasticEngine;
+use Belt\Elastic\Engine;
 use Belt\Content\Elastic\ElasticService;
 use Elasticsearch\Namespaces\IndicesNamespace;
 use Elasticsearch\Client as Elastic;

@@ -64,8 +64,17 @@ class BeltElasticServiceProvider extends ServiceProvider
 
         # engines
         $this->app->register(Laravel\Scout\ScoutServiceProvider::class);
-        $this->app->register(Belt\Elastic\Elastic\ElasticServiceProvider::class);
-        $this->app->register(Belt\Elastic\Search\Mock\MockEngineServiceProvider::class);
+
+        $engine = new ElasticEngine(Elasticsearch\ClientBuilder::create()
+            ->setHosts(config('belt.elastic.index.hosts'))
+            ->build(),
+            config('belt.elastic.index.name'),
+            config('belt.elastic.index')
+        );
+
+        app(EngineManager::class)->extend('elastic', function () use ($engine) {
+            return $engine;
+        });
     }
 
     /**

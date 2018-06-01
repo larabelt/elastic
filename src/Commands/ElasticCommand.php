@@ -3,12 +3,12 @@
 namespace Belt\Elastic\Commands;
 
 use Riimu;
-use Belt\Content\Elastic\ElasticService;
+use Belt\Elastic\Service as ElasticService;
 use Illuminate\Console\Command;
 
 /**
  * Class CompileCommand
- * @package Belt\Content\Commands
+ * @package Belt\Elastic\Commands
  */
 class ElasticCommand extends Command
 {
@@ -18,7 +18,7 @@ class ElasticCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'belt-content:elastic {action} {--type=}';
+    protected $signature = 'belt-elastic:search {action} {--type=}';
 
     /**
      * The console command description.

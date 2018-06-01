@@ -5,8 +5,8 @@ use Belt\Core\Helpers\MorphHelper;
 use Belt\Core\Http\Requests\PaginateRequest;
 use Belt\Core\Testing;
 use Belt\Content\Page;
-use Belt\Content\Elastic\ElasticEngine;
-use Belt\Content\Elastic\Modifiers\IsActiveQueryModifier;
+use Belt\Elastic\Engine;
+use Belt\Elastic\Modifiers\IsActiveQueryModifier;
 use Elasticsearch\Client as Elastic;
 use Illuminate\Database\Eloquent\Collection;
 use Laravel\Scout\Builder;
@@ -19,20 +19,20 @@ class ElasticEngineTest extends Testing\BeltTestCase
     }
 
     /**
-     * @covers \Belt\Content\Elastic\ElasticEngine::__construct
-     * @covers \Belt\Content\Elastic\ElasticEngine::setRequest
-     * @covers \Belt\Content\Elastic\ElasticEngine::setOptions
-     * @covers \Belt\Content\Elastic\ElasticEngine::update
-     * @covers \Belt\Content\Elastic\ElasticEngine::delete
-     * @covers \Belt\Content\Elastic\ElasticEngine::search
-     * @covers \Belt\Content\Elastic\ElasticEngine::performSearch
-     * @covers \Belt\Content\Elastic\ElasticEngine::addModifiers
-     * @covers \Belt\Content\Elastic\ElasticEngine::applyModifiers
-     * @covers \Belt\Content\Elastic\ElasticEngine::morphResults
-     * @covers \Belt\Content\Elastic\ElasticEngine::paginate
-     * @covers \Belt\Content\Elastic\ElasticEngine::mapIds
-     * @covers \Belt\Content\Elastic\ElasticEngine::map
-     * @covers \Belt\Content\Elastic\ElasticEngine::getTotalCount
+     * @covers \Belt\Elastic\Engine::__construct
+     * @covers \Belt\Elastic\Engine::setRequest
+     * @covers \Belt\Elastic\Engine::setOptions
+     * @covers \Belt\Elastic\Engine::update
+     * @covers \Belt\Elastic\Engine::delete
+     * @covers \Belt\Elastic\Engine::search
+     * @covers \Belt\Elastic\Engine::performSearch
+     * @covers \Belt\Elastic\Engine::addModifiers
+     * @covers \Belt\Elastic\Engine::applyModifiers
+     * @covers \Belt\Elastic\Engine::morphResults
+     * @covers \Belt\Elastic\Engine::paginate
+     * @covers \Belt\Elastic\Engine::mapIds
+     * @covers \Belt\Elastic\Engine::map
+     * @covers \Belt\Elastic\Engine::getTotalCount
      */
     public function test()
     {
