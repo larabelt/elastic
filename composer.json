@@ -1,0 +1,27 @@
+{
+  "name": "larabelt/elastic",
+  "description": "Elastic package for LaraBelt.",
+  "keywords": ["cms", "laravel", "larabelt", "elastic"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matt Crowe",
+      "email": "github.mpc@zym.me"
+    },
+    {
+      "name": "Rob LaSota",
+      "email": "rob.lasota@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "elasticsearch/elasticsearch": "^5.2",
+    "laravel/scout": "^4.0",
+    "soundasleep/html2text": "^0.3.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Belt\\Elastic\\": "src/"
+    }
+  }
+}
