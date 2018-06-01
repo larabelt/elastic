@@ -3,7 +3,7 @@
 use Mockery as m;
 use Belt\Core\Testing\BeltTestCase;
 use Belt\Elastic\Engine;
-use Belt\Content\Elastic\ElasticService;
+use Belt\ElasticService;
 use Elasticsearch\Namespaces\IndicesNamespace;
 use Elasticsearch\Client as Elastic;
 use Illuminate\Contracts\Filesystem\Filesystem;
@@ -17,18 +17,18 @@ class ElasticServiceTest extends BeltTestCase
     }
 
     /**
-     * @covers \Belt\Content\Elastic\ElasticService::__construct
-     * @covers \Belt\Content\Elastic\ElasticService::elastic
-     * @covers \Belt\Content\Elastic\ElasticService::engine
-     * @covers \Belt\Content\Elastic\ElasticService::indices
-     * @covers \Belt\Content\Elastic\ElasticService::disk
-     * @covers \Belt\Content\Elastic\ElasticService::writeConfig
-     * @covers \Belt\Content\Elastic\ElasticService::deleteIndex
-     * @covers \Belt\Content\Elastic\ElasticService::createIndex
-     * @covers \Belt\Content\Elastic\ElasticService::getSettings
-     * @covers \Belt\Content\Elastic\ElasticService::getMappings
-     * @covers \Belt\Content\Elastic\ElasticService::putMappings
-     * @covers \Belt\Content\Elastic\ElasticService::import
+     * @covers \Belt\ElasticService::__construct
+     * @covers \Belt\ElasticService::elastic
+     * @covers \Belt\ElasticService::engine
+     * @covers \Belt\ElasticService::indices
+     * @covers \Belt\ElasticService::disk
+     * @covers \Belt\ElasticService::writeConfig
+     * @covers \Belt\ElasticService::deleteIndex
+     * @covers \Belt\ElasticService::createIndex
+     * @covers \Belt\ElasticService::getSettings
+     * @covers \Belt\ElasticService::getMappings
+     * @covers \Belt\ElasticService::putMappings
+     * @covers \Belt\ElasticService::import
      */
     public function test()
     {

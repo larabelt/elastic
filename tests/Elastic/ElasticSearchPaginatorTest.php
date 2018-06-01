@@ -7,7 +7,7 @@ use Belt\Content\Http\Requests\PaginatePages;
 use Belt\Content\Http\Requests\PaginatePosts;
 use Belt\Content\Page;
 use Belt\Content\Post;
-use Belt\Content\Elastic\ElasticSearchPaginator;
+use Belt\ElasticSearchPaginator;
 use Belt\Content\Search\Mock\MockEngine;
 use Illuminate\Http\Request;
 use Laravel\Scout\EngineManager;
@@ -20,7 +20,7 @@ class ElasticSearchPaginatorTest extends BeltTestCase
     }
 
     /**
-     * @covers \Belt\Content\Elastic\ElasticSearchPaginator::build
+     * @covers \Belt\ElasticSearchPaginator::build
      */
     public function test()
     {
