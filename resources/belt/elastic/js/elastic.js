@@ -1,3 +1,4 @@
+import store from 'belt/core/js/store/index';
 
 window.larabelt.elastic = _.get(window, 'larabelt.elastic', {});
 
