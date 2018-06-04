@@ -13,8 +13,8 @@ class ElasticCommandTest extends BeltTestCase
     }
 
     /**
-     * @covers \Belt\Content\Commands\ElasticCommand::service
-     * @covers \Belt\Content\Commands\ElasticCommand::handle
+     * @covers \Belt\Elastic\Commands\ElasticCommand::service
+     * @covers \Belt\Elastic\Commands\ElasticCommand::handle
      */
     public function testHandle()
     {
