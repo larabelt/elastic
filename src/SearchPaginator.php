@@ -16,7 +16,7 @@ class SearchPaginator extends BaseLengthAwarePaginator
     /**
      * Build pagination query.
      *
-     * @return ElasticSearchPaginator
+     * @return SearchPaginator
      */
     public function build()
     {

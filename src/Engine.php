@@ -21,7 +21,7 @@ class Engine extends BaseEngine implements Search\HasPaginatorInterface
 
     use HasConfig, Search\HasPaginator;
 
-    public static $paginatorClass = ElasticSearchPaginator::class;
+    public static $paginatorClass = SearchPaginator::class;
 
     /**
      * @var Elastic

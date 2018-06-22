@@ -28,7 +28,7 @@ class ServiceTest extends BeltTestCase
      * @covers \Belt\Elastic\Service::getSettings
      * @covers \Belt\Elastic\Service::getMappings
      * @covers \Belt\Elastic\Service::putMappings
-     * @covers \Belt\Elastic\Service::import
+     * @covers \Belt\Elastic\Service::upsert
      */
     public function test()
     {
@@ -117,7 +117,7 @@ class ServiceTest extends BeltTestCase
         $disk->shouldReceive('put')->with('config/belt/elastic/mappings/posts.php', ['foo'=>'bar'])->andReturnSelf();
         $service->getMappings();
 
-        # import
+        # upsert
         $items = new Collection(['stuff']);
         $qb = m::mock(\Illuminate\Database\Eloquent\Builder::class);
         $qb->shouldReceive('__clone')->andReturnSelf();
@@ -130,7 +130,7 @@ class ServiceTest extends BeltTestCase
         $engine->shouldReceive('update')->with($items)->andReturnNull();
         $service->engine = $engine;
         $service->morphHelper = $morphHelper;
-        $service->import(['foo']);
+        $service->upsert(['foo']);
 
     }
 

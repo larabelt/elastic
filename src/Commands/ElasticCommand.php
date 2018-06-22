@@ -74,8 +74,8 @@ class ElasticCommand extends Command
             $this->service()->createIndex();
         }
 
-        if ($action == 'import') {
-            $this->service()->import($this->option('type'));
+        if ($action == 'upsert') {
+            $this->service()->upsert($this->option('type'));
         }
 
     }
