@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 return [
     'properties' => [
@@ -12,9 +12,12 @@ return [
         'meta_description' => \Belt\Elastic\ConfigHelper::property('text'),
         'meta_keywords' => \Belt\Elastic\ConfigHelper::property('text'),
         'meta_title' => \Belt\Elastic\ConfigHelper::property('text'),
+        'priority' => \Belt\Elastic\ConfigHelper::property('integer'),
+        'rating' => \Belt\Elastic\ConfigHelper::property('float'),
         'searchable' => \Belt\Elastic\ConfigHelper::property('text'),
         'created_at' => \Belt\Elastic\ConfigHelper::property('integer'),
         'updated_at' => \Belt\Elastic\ConfigHelper::property('integer'),
         'terms' => \Belt\Elastic\ConfigHelper::property('long'),
+        'location' => \Belt\Elastic\ConfigHelper::property('geo_point'),
     ],
 ];

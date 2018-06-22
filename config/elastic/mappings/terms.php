@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 return [
     'properties' => [
@@ -15,6 +15,5 @@ return [
         'searchable' => \Belt\Elastic\ConfigHelper::property('text'),
         'created_at' => \Belt\Elastic\ConfigHelper::property('integer'),
         'updated_at' => \Belt\Elastic\ConfigHelper::property('integer'),
-        'terms' => \Belt\Elastic\ConfigHelper::property('long'),
     ],
 ];
