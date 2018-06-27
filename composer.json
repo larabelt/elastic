@@ -16,8 +16,6 @@
   "minimum-stability": "dev",
   "require": {
     "elasticsearch/elasticsearch": "^5.2",
-    "laravel/scout": "^4.0",
-    "soundasleep/html2text": "^0.3.4"
   },
   "autoload": {
     "psr-4": {
