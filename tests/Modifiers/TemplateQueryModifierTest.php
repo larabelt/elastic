@@ -22,7 +22,7 @@ class TemplateQueryModifierTest extends BeltTestCase
         $modifier = new TemplateQueryModifier($engine);
 
         $this->assertFalse(isset($engine->query['bool']['must'][0]['terms']['template']));
-        $modifier->modify(new PaginateRequest(['template' => 'foo']));
+        $modifier->modify(new PaginateRequest(['subtype' => 'foo']));
         $this->assertTrue(isset($engine->query['bool']['must'][0]['terms']['template']));
     }
 
