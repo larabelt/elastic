@@ -18,6 +18,9 @@
     "elasticsearch/elasticsearch": "^5.2"
   },
   "autoload": {
+    "classmap": [
+      "updates"
+    ],
     "psr-4": {
       "Belt\\Elastic\\": "src/"
     }
