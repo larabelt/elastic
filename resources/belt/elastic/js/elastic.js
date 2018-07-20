@@ -14,7 +14,7 @@ export default class BeltElastic {
                 routes: []
             });
 
-            const app = new Vue({router, store}).$mount('#belt-elastic');
+            new Vue({router, store}).$mount('#belt-elastic');
         }
     }
 
