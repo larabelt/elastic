@@ -9,7 +9,6 @@ use Belt\Content\Term;
 class TermableQueryModifier extends PaginationQueryModifier
 {
 
-
     /**
      * @var Term
      */
