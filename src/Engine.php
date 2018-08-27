@@ -2,7 +2,7 @@
 
 namespace Belt\Elastic;
 
-use Belt;
+use Belt, Morph;
 use Belt\Core\Behaviors\HasConfig;
 use Belt\Core\Helpers;
 use Belt\Core\Http\Requests\PaginateRequest;
@@ -61,11 +61,6 @@ class Engine extends BaseEngine implements Search\HasPaginatorInterface
     public static $modifiers = [];
 
     /**
-     * @var Helpers\MorphHelper
-     */
-    public $morphHelper;
-
-    /**
      * @var array
      */
     public $params = [];
@@ -107,7 +102,6 @@ class Engine extends BaseEngine implements Search\HasPaginatorInterface
         $this->config = $config;
         $this->elastic = $elastic;
         $this->index = $index;
-        $this->morphHelper = new Helpers\MorphHelper();
         $this->min_score = (float) $this->config('min_score', 0);
         $this->types = $this->config('types');
     }
@@ -325,14 +319,23 @@ class Engine extends BaseEngine implements Search\HasPaginatorInterface
     {
 
         $items = new Collection();
+
         foreach (array_get($results, 'hits.hits', []) as $result) {
+
             $this->debug($result);
             $id = array_get($result, '_id');
             $type = array_get($result, '_type');
-            $item = $this->morphHelper->morph($type, $id);
-            if ($item) {
+
+            $qb = Morph::type2QB($type);
+            foreach ((array) $this->request->embed() as $embeddable) {
+                $qb->with($embeddable);
+            }
+
+            if ($item = $qb->where('id', $id)->first()) {
+                $item->append($this->request->append());
                 $items->push($item);
             }
+
         }
 
         return $items;
