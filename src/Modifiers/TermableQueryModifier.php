@@ -105,7 +105,8 @@ class TermableQueryModifier extends PaginationQueryModifier
             foreach ($groups as $group) {
                 $filter['bool']['must'] = [];
                 foreach ($group as $_group) {
-                    $filter['bool']['must'][] = ['terms' => ['terms' => $_group]];
+                    /* "terms" is seemingly reserved by elasticsearch */
+                    $filter['bool']['must'][] = ['terms' => ['categories' => $_group]];
                 }
                 $filters[] = $filter;
             }
@@ -130,7 +131,8 @@ class TermableQueryModifier extends PaginationQueryModifier
             foreach ($groups as $params) {
                 $query['bool']['must'] = [];
                 foreach ($params as $group) {
-                    $query['bool']['must'][] = ['terms' => ['terms' => $group, 'boost' => 1]];
+                    /* "terms" is seemingly reserved by elasticsearch */
+                    $query['bool']['must'][] = ['terms' => ['categories' => $group, 'boost' => 1]];
                 }
                 $queries[] = $query;
             }
