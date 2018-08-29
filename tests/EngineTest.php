@@ -63,6 +63,7 @@ class EngineTest extends Testing\BeltTestCase
             'min_score' => .5,
             'debug' => true,
             'orderBy' => 'score',
+            'embed' => 'params',
         ]);
         $engine->setRequest($request);
         $this->assertEquals(25, $engine->size);

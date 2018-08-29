@@ -5,10 +5,9 @@ namespace Belt\Elastic\Modifiers;
 use Belt;
 use Belt\Core\Helpers;
 use Belt\Core\Http\Requests\PaginateRequest;
-use Belt\Elastic\Modifiers\PaginationQueryModifier;
 use Belt\Content\Term;
 
-class TermableSortModifier extends PaginationQueryModifier
+class TermableSortModifier extends Belt\Elastic\Modifiers\PaginationQueryModifier
 {
 
     /**
@@ -25,6 +24,21 @@ class TermableSortModifier extends PaginationQueryModifier
     }
 
     /**
+     * @param $ids
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function find($ids)
+    {
+        $terms = $this->terms()
+            ->newQuery()
+            ->whereIn('id', (array) $ids)
+            ->orWhereIn('slug', (array) $ids)
+            ->get(['terms.id']);
+
+        return $terms;
+    }
+
+    /**
      * Modify the query
      *
      * @param  PaginateRequest $request
@@ -35,27 +49,27 @@ class TermableSortModifier extends PaginationQueryModifier
 
         if ($orderBy = $request->get('orderBy')) {
             $sortHelper = new Helpers\SortHelper($orderBy);
-            if ($sort = $sortHelper->getByColumn('tag')) {
-                $tags = $this->find($sort->params);
-                if ($tags) {
+            if ($sort = $sortHelper->getByColumn('term')) {
+                $terms = $this->find($sort->params);
+                if ($terms) {
                     $this->engine->sort['_script'] = [
                         'type' => 'number',
                         'order' => 'desc',
                         'script' => [
                             'lang' => 'painless',
                             'inline' => "
-                                int tag;
+                                int category;
                                 int count = 0; 
-                                for(int i=0; i < doc['tags'].length; i++) { 
-                                    tag = (int) (long) doc['tags'][i];
-                                    if (params.tags.indexOf(tag) > -1) {
+                                for(int i=0; i < doc['categories'].length; i++) { 
+                                    category = (int) (long) doc['categories'][i];
+                                    if (params.categories.indexOf(category) > -1) {
                                         count = count + 1;
                                     } 
                                 } 
                                 return count;
                             ",
                             'params' => [
-                                'tags' => $tags->pluck('id')->all(),
+                                'categories' => $terms->pluck('id')->all(),
                             ],
                         ]
                     ];
