@@ -18,7 +18,8 @@ class SubtypeQueryModifier extends PaginationQueryModifier
         if ($request->query->has('subtype')) {
             $subtype = $request->query->get('subtype', 'default');
             $this->engine->query['bool']['must'][]['terms'] = [
-                'subtype' => [$subtype],
+                //'subtype' => [$subtype],
+                'subtype' => explode(',', $subtype),
             ];
         }
     }
