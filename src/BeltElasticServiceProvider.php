@@ -48,7 +48,7 @@ class BeltElasticServiceProvider extends ServiceProvider
     {
         // set backup view paths
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'belt-elastic');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views/docs', 'belt-docs');
+        //$this->loadViewsFrom(__DIR__ . '/../resources/views/docs', 'belt-docs');
 
         // set backup translation paths
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'belt-elastic');
