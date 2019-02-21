@@ -22,7 +22,8 @@
       "updates"
     ],
     "psr-4": {
-      "Belt\\Elastic\\": "src/"
+      "Belt\\Elastic\\": "src/",
+      "Tests\\Belt\\Elastic\\": "tests/"
     }
   }
 }
