@@ -1,4 +1,4 @@
-<?php
+<?php namespace Tests\Belt\Elastic\Unit;
 
 use Belt\Elastic\ConfigHelper;
 
@@ -17,6 +17,5 @@ class ConfigHelperTest extends \PHPUnit\Framework\TestCase
         $this->assertEmpty($helper->normalizer('test'));
         $this->assertEmpty($helper->property('test'));
     }
-
 
 }

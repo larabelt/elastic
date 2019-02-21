@@ -1,8 +1,8 @@
-<?php
+<?php namespace Tests\Belt\Elastic\Unit\Modifiers;
 
 use Mockery as m;
 use Belt\Core\Http\Requests\PaginateRequest;
-use Belt\Core\Testing\BeltTestCase;
+use Belt\Core\Tests\BeltTestCase;
 use Belt\Content\Term;
 use Belt\Elastic\Engine;
 use Belt\Elastic\Modifiers\TermableSortModifier;
