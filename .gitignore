@@ -6,3 +6,4 @@ _ide_helper_models.php
 vendor
 node_modules
 .babelrc
+tests/xdebug-filter.php
