@@ -3,7 +3,7 @@
 use Mockery as m;
 use Belt\Core\Helpers\MorphHelper;
 use Belt\Core\Http\Requests\PaginateRequest;
-use Belt\Core\Tests;
+use Tests\Belt\Core;
 use Belt\Content\Page;
 use Belt\Elastic\Engine as ElasticEngine;
 use Belt\Elastic\Modifiers\IsActiveQueryModifier;
@@ -11,7 +11,7 @@ use Elasticsearch\Client as Elastic;
 use Illuminate\Database\Eloquent\Collection;
 use Laravel\Scout\Builder;
 
-class EngineTest extends Tests\BeltTestCase
+class EngineTest extends \Tests\Belt\Core\BeltTestCase
 {
     public function tearDown()
     {

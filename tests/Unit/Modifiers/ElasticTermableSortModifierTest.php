@@ -2,7 +2,7 @@
 
 use Mockery as m;
 use Belt\Core\Http\Requests\PaginateRequest;
-use Belt\Core\Tests\BeltTestCase;
+use Tests\Belt\Core\BeltTestCase;
 use Belt\Content\Term;
 use Belt\Elastic\Engine;
 use Belt\Elastic\Modifiers\TermableSortModifier;

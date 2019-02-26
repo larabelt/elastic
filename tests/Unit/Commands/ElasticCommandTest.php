@@ -1,7 +1,7 @@
 <?php namespace Tests\Belt\Elastic\Unit\Commands;
 
 use Mockery as m;
-use Belt\Core\Tests\BeltTestCase;
+use Tests\Belt\Core\BeltTestCase;
 use Belt\Elastic\Commands\ElasticCommand;
 use Belt\Elastic\Service as ElasticService;
 

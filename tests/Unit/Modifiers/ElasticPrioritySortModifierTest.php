@@ -2,7 +2,7 @@
 
 use Mockery as m;
 use Belt\Core\Http\Requests\PaginateRequest;
-use Belt\Core\Tests\BeltTestCase;
+use Tests\Belt\Core\BeltTestCase;
 use Belt\Elastic\Engine as ElasticEngine;
 use Belt\Elastic\Modifiers\PrioritySortModifier;
 

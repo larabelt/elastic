@@ -1,7 +1,7 @@
 <?php namespace Tests\Belt\Elastic\Unit;
 
 use Mockery as m;
-use Belt\Core\Tests\BeltTestCase;
+use Tests\Belt\Core\BeltTestCase;
 use Belt\Core\Http\Requests\PaginateRequest;
 use Belt\Content\Http\Requests\PaginatePages;
 use Belt\Content\Http\Requests\PaginatePosts;

@@ -1,7 +1,7 @@
 <?php namespace Tests\Belt\Elastic\Unit;
 
 use Mockery as m;
-use Belt\Core\Tests\BeltTestCase;
+use Tests\Belt\Core\BeltTestCase;
 use Belt\Elastic\Engine as ElasticEngine;
 use Belt\Elastic\Service as ElasticService;
 use Elasticsearch\Namespaces\IndicesNamespace;
